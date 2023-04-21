@@ -43,6 +43,7 @@ pipeline{
                }
             }
         }
+        /*
         stage('Static code analysis: Sonarqube'){
          when { expression {  params.action == 'create' } }
             steps{
@@ -107,6 +108,7 @@ pipeline{
                    dockerImageCleanup("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
-        }      
+        }
+        */      
     }
 }
