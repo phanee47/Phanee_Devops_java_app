@@ -9,7 +9,7 @@ pipeline{
         choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
         string(name: 'ImageName', description: "name of the docker build", defaultValue: 'javapp')
         string(name: 'ImageTag', description: "tag of the docker build", defaultValue: 'v1')
-        string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'vikashashoke')
+        string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'phanee47')
     }
 
     stages{
@@ -19,7 +19,7 @@ pipeline{
             steps{
             gitCheckout(
                 branch: "main",
-                url: "https://github.com/vikash-kumar01/mrdevops_java_app.git"
+                url: "https://github.com/phanee47/Phanee_Devops_java_app.git"
             )
             }
         }
@@ -43,7 +43,10 @@ pipeline{
                }
             }
         }
+        
         /*
+
+        
         stage('Static code analysis: Sonarqube'){
          when { expression {  params.action == 'create' } }
             steps{
@@ -54,6 +57,7 @@ pipeline{
                }
             }
         }
+        /*
         stage('Quality Gate Status Check : Sonarqube'){
          when { expression {  params.action == 'create' } }
             steps{
