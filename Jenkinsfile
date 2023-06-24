@@ -46,7 +46,7 @@ pipeline{
         
     
 
-        
+  /*      
         stage('Static code analysis: Sonarqube'){
          when { expression {  params.action == 'create' } }
             steps{
@@ -57,7 +57,7 @@ pipeline{
                }
             }
         }
-        /*
+        
         stage('Quality Gate Status Check : Sonarqube'){
          when { expression {  params.action == 'create' } }
             steps{
@@ -68,6 +68,8 @@ pipeline{
                }
             }
         }
+        */
+        
         stage('Maven Build : maven'){
          when { expression {  params.action == 'create' } }
             steps{
@@ -95,6 +97,7 @@ pipeline{
                }
             }
         }
+        /*
         stage('Docker Image Push : DockerHub '){
          when { expression {  params.action == 'create' } }
             steps{
